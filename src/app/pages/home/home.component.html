@@ -39,22 +39,6 @@
             (change)="handleEditCompletion($event, task.id)"
           />
         </li>
-        <!-- <li>
-          <div class="view">
-            <input class="toggle" type="checkbox" />
-            <label>Buy a unicorn</label>
-            <button class="destroy"></button>
-          </div>
-          <input class="edit" value="Buy a unicorn" />
-        </li> -->
-        <!-- <li class="editing">
-          <div class="view">
-            <input class="toggle" type="checkbox" />
-            <label>Make dishes</label>
-            <button class="destroy"></button>
-          </div>
-          <input class="edit" value="Make dishes" />
-        </li> -->
       </ul>
     </section>
     <!-- This footer should be hidden by default and shown when there are todos -->
@@ -68,7 +52,8 @@
       <ul class="filters">
         <li>
           <a
-            href="/?filter=all"
+            [routerLink]="['/']"
+            [queryParams]="{ filter: 'all' }"
             [class.selected]="tasksFilter === 'all'"
             (click)="changeFilter('all')"
             >All</a
@@ -76,7 +61,8 @@
         </li>
         <li>
           <a
-            href="/?filter=pending"
+            [routerLink]="['/']"
+            [queryParams]="{ filter: 'pending' }"
             [class.selected]="tasksFilter === 'pending'"
             (click)="changeFilter('pending')"
             >Pending</a
@@ -84,7 +70,8 @@
         </li>
         <li>
           <a
-            href="/?filter=completed"
+            [routerLink]="['/']"
+            [queryParams]="{ filter: 'completed' }"
             [class.selected]="tasksFilter === 'completed'"
             (click)="changeFilter('completed')"
             >Completed</a
